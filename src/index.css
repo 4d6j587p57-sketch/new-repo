@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0c0c0c;
+    color: #888;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #222; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.5s ease forwards; }
+.d1 { animation-delay: 0.05s; opacity: 0; }
+.d2 { animation-delay: 0.12s; opacity: 0; }
+.d3 { animation-delay: 0.20s; opacity: 0; }
+.d4 { animation-delay: 0.28s; opacity: 0; }
+.d5 { animation-delay: 0.36s; opacity: 0; }
+.d6 { animation-delay: 0.44s; opacity: 0; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.caret { animation: blink 1s step-end infinite; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+.live-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
